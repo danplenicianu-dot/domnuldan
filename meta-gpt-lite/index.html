@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>GPT Lite • Domnul Dan</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-label="GPT Lite for Ray-Ban Meta Display">
+    <section class="screen active" id="home" data-screen="home">
+      <div class="topline">
+        <span class="dot"></span>
+        <span>GPT LITE</span>
+      </div>
+      <h1>Salut, domnule Dan.</h1>
+      <p class="subtitle">Micro-webapp pentru Ray-Ban Meta Display: text mare, fundal negru, control cu D‑pad.</p>
+      <div class="button-grid">
+        <button class="focusable primary" data-action="voice">Vorbește</button>
+        <button class="focusable" data-action="type">Scrie</button>
+        <button class="focusable" data-action="quick">Prompt rapid</button>
+        <button class="focusable" data-action="settings">Setări</button>
+      </div>
+      <p class="hint">D‑pad: sus/jos/stânga/dreapta · Enter: selectează · Esc: înapoi</p>
+    </section>
+
+    <section class="screen" id="ask" data-screen="ask">
+      <div class="topline"><span class="dot"></span><span>ASK</span></div>
+      <label class="label" for="prompt">Întrebare</label>
+      <textarea id="prompt" class="focusable input" rows="5" placeholder="Ex: rezumă-mi pe scurt ce trebuie să fac acum"></textarea>
+      <div class="button-row">
+        <button class="focusable primary" data-action="send">Trimite</button>
+        <button class="focusable" data-action="copy">Copiază</button>
+        <button class="focusable" data-action="back">Înapoi</button>
+      </div>
+    </section>
+
+    <section class="screen" id="quick" data-screen="quick">
+      <div class="topline"><span class="dot"></span><span>QUICK</span></div>
+      <h2>Alege un prompt</h2>
+      <div class="list">
+        <button class="focusable quick" data-prompt="Răspunde foarte scurt, în română, cu pași clari.">Răspuns scurt</button>
+        <button class="focusable quick" data-prompt="Transformă ce spun într-o listă de pași practici.">Pași practici</button>
+        <button class="focusable quick" data-prompt="Dă-mi o idee rapidă și premium pentru casa mea.">Idee casă</button>
+        <button class="focusable quick" data-prompt="Ajută-mă cu o setare pentru Creality Falcon A1 10W.">Laser helper</button>
+      </div>
+      <button class="focusable ghost" data-action="back">Înapoi</button>
+    </section>
+
+    <section class="screen" id="answer" data-screen="answer">
+      <div class="topline"><span class="dot thinking"></span><span>ANSWER</span></div>
+      <div id="answerBox" class="answer">Aici apare răspunsul.</div>
+      <div class="button-row">
+        <button class="focusable primary" data-action="again">Întreabă iar</button>
+        <button class="focusable" data-action="openchatgpt">Deschide ChatGPT</button>
+        <button class="focusable" data-action="backhome">Acasă</button>
+      </div>
+    </section>
+
+    <section class="screen" id="settings" data-screen="settings">
+      <div class="topline"><span class="dot"></span><span>SETĂRI</span></div>
+      <p class="subtitle">Pentru răspunsuri reale în acest webapp, setează URL-ul unui backend securizat care cheamă OpenAI API.</p>
+      <label class="label" for="endpoint">Backend endpoint</label>
+      <input id="endpoint" class="focusable input single" placeholder="https://.../api/chat" />
+      <div class="button-row">
+        <button class="focusable primary" data-action="saveSettings">Salvează</button>
+        <button class="focusable" data-action="clearSettings">Șterge</button>
+        <button class="focusable" data-action="back">Înapoi</button>
+      </div>
+      <p class="hint">Nu pune cheia OpenAI direct în browser.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
