@@ -1,0 +1,11 @@
+{
+  "name": "GPT Lite • Domnul Dan",
+  "short_name": "GPT Lite",
+  "description": "Micro webapp optimized for Meta Ray-Ban Display glasses.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": []
+}
